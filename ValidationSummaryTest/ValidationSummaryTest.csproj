@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>サーバー側の入力検証でエラーが発生した場合に画面に表示させるメッセージが asp-validation-summary に指定したパラメータでどのように変化するか確認します。</Description>
+    <Company>ソーサリーフォース (http://sorceryforce.net/)</Company>
+    <Authors>おのでら (ソーサリーフォース)</Authors>
+    <Copyright>Copyright (C) 2020 おのでら</Copyright>
+  </PropertyGroup>
+
+</Project>

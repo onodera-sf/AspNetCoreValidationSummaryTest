@@ -1,0 +1,78 @@
+﻿@model ValidationSummaryTest.Models.UserViewModel
+
+@{
+	ViewData["Title"] = "ValidateModelOnly";
+}
+
+<h1>ValidateModelOnly</h1>
+
+<h4>UserViewModel</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="ValidateModelOnly">
+			<div asp-validation-summary="ModelOnly" class="text-danger">エラー直接入力</div>
+			<div class="form-group">
+				<label asp-for="ID" class="control-label"></label>
+				<input asp-for="ID" class="form-control" />
+				<span asp-validation-for="ID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Name" class="control-label"></label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Password" class="control-label"></label>
+				<input asp-for="Password" class="form-control" />
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Age" class="control-label"></label>
+				<input asp-for="Age" class="form-control" />
+				<span asp-validation-for="Age" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Gender"></label>
+				<div>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.None)" />@(GenderType.None) </label>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.Man)" />@(GenderType.Man) </label>
+					<label><input type="radio" asp-for="Gender" value="@(GenderType.Woman)" />@(GenderType.Woman) </label>
+				</div>
+				<span asp-validation-for="Gender" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Email" class="control-label"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Birthday" class="control-label"></label>
+				<input asp-for="Birthday" class="form-control" />
+				<span asp-validation-for="Birthday" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Comment" class="control-label"></label>
+				<textarea asp-for="Comment" class="form-control"></textarea>
+				<span asp-validation-for="Comment" class="text-danger"></span>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" asp-for="IsAccepted" /> @Html.DisplayNameFor(model => model.IsAccepted)
+				</label>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@* サーバーのエラーを表示したいのでコメントアウト *@
+@*@section Scripts {
+			@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	}*@
